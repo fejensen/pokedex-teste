@@ -19,20 +19,32 @@
       <button mat-icon-button (click)="sidenav.toggle()" >
         <mat-icon>menu</mat-icon>
       </button>
-      <div class="spacer-1"></div>
-      <span id="toolbar-title">PokeDex</span>
+      <div class="spacer-h-1"></div>
+      <span class="toolbar-title">PokeDex</span>
     </mat-toolbar>
     <!-- BEGIN Conteudo principal-->
+    <form>
+      <div class="spacer-v-1"></div>
+      <span class="title-m">PokeDex.org</span>
+      <div class="search-field">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Search fo the Pokemon" >
+        </mat-form-field>
+      </div>
+    </form>
     <div class="main-content">
-      <mat-grid-list cols="5" rowHeight="1:1">
+      <mat-grid-list cols="6" rowHeight="1:1">
         <mat-grid-tile *ngFor="let pokemonList of pokemonRequest">
           <mat-card >
             <mat-card-content>
               <img mat-card-image src={{pokemonList.img}} alt={{pokemonList.name}}>
+
+            </mat-card-content>
+            <div class="pokemon-name-title">
               <span>
                 {{ pokemonList.name | titlecase }}
               </span>
-            </mat-card-content>
+            </div>
           </mat-card>
         </mat-grid-tile>
       </mat-grid-list>
