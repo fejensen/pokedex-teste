@@ -1,0 +1,42 @@
+
+<mat-sidenav-container class="c-menu-main" >
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="c-sidebar" >
+    <div class="main-title main-title-box">
+      <h1>PokeDex.org</h1>
+    </div>
+    <div class="main-title main-title-box">
+    </div>
+    <div class="pointer main-title-box">
+      <h1>Pokemon</h1>
+    </div>
+    <div class="pointer main-title-box">
+      <h1>About</h1>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar class="main-toolbar">
+      <button mat-icon-button (click)="sidenav.toggle()" >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div class="spacer-1"></div>
+      <span id="toolbar-title">PokeDex</span>
+    </mat-toolbar>
+    <!-- BEGIN Conteudo principal-->
+    <div class="main-content">
+      <mat-grid-list cols="5" rowHeight="1:1">
+        <mat-grid-tile *ngFor="let pokemonList of pokemonRequest">
+          <mat-card >
+            <mat-card-content>
+              <img mat-card-image src={{pokemonList.img}} alt={{pokemonList.name}}>
+              <span>
+                {{ pokemonList.name | titlecase }}
+              </span>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <!-- END Conteudo principal-->
+  </mat-sidenav-content>
+</mat-sidenav-container>

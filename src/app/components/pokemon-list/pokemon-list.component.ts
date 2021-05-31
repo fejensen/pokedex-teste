@@ -5,8 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.scss']
 })
-export class PokemonListComponent implements OnInit {
 
+
+export class PokemonListComponent implements OnInit {
+  title = 'Pokedex';
   constructor() { }
 
   ngOnInit(): void {
