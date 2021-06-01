@@ -7,14 +7,6 @@ interface Pokemon {
   img: string;
 };
 
-export interface GridColumns {
-  xs: number;
-  sm: number;
-  md: number;
-  lg: number;
-  xl: number;
-}
-
 @Component({
   selector: 'app-pokemon-menu',
   templateUrl: './pokemon-menu.component.html',
