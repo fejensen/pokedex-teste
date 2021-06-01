@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonService } from '../../service/pokemon.service';
+
+interface Pokemon {
+  name: string;
+  url: string;
+  img: string;
+};
 
 @Component({
   selector: 'app-pokemon-list',
@@ -8,10 +15,27 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class PokemonListComponent implements OnInit {
-  title = 'Pokedex';
-  constructor() { }
-
-  ngOnInit(): void {
+  title = 'Poke-Menu';
+  opened: boolean =  true;
+  pokemonRequest : Array<Pokemon> = [];
+  JSON = JSON;
+  constructor() {
   }
 
+  async ngOnInit(): Promise<void> {
+    let { data } = await new PokemonService().getPokemons();
+    let pokemonResults:Array<Pokemon> = [];
+
+    data.results.map(
+      async(result: Pokemon)=>{
+        let { data } = await new PokemonService().getPokemonInfo(result.url);
+        let imgUrl = data.sprites.front_default;
+        let pokeName = data.name;
+
+       pokemonResults.push(await{name:pokeName, url:'', img:imgUrl});
+      }
+    )
+
+    this.pokemonRequest = pokemonResults;
+  }
 }

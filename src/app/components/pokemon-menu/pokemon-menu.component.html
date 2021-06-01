@@ -6,14 +6,15 @@
     </div>
     <div class="main-title main-title-box">
     </div>
-    <div class="pointer main-title-box">
-      <h1>Pokemon</h1>
+    <div class="pointer main-title-box" routerLink="/pokemon-list-component">
+      <h1 >Pokemon</h1>
     </div>
-    <div class="pointer main-title-box">
-      <h1>About</h1>
-    </div>
+    <a href="https://pokeapi.co/docs/v2" target="_blank" class="no-deco">
+      <div class="pointer main-title-box" >
+        <h1>About</h1>
+      </div>
+    </a>
   </mat-sidenav>
-
   <mat-sidenav-content>
     <mat-toolbar class="main-toolbar">
       <button mat-icon-button (click)="sidenav.toggle()" >
@@ -23,51 +24,7 @@
       <span class="toolbar-title">PokeDex</span>
     </mat-toolbar>
     <!-- BEGIN Conteudo principal-->
-    <form>
-      <div class="spacer-v-1"></div>
-      <span class="title-m">PokeDex.org</span>
-      <div class="search-field">
-        <mat-form-field class="full-width">
-          <input matInput placeholder="Search fo the Pokemon" >
-        </mat-form-field>
-      </div>
-    </form>
-    <div class="main-content">
-      <mat-grid-list cols="6" rowHeight="1:1">
-        <mat-grid-tile *ngFor="let pokemonList of pokemonRequest">
-          <mat-card >
-            <mat-card-content>
-              <img mat-card-image src={{pokemonList.img}} alt={{pokemonList.name}}>
-              <div
-                style="width: 50%;
-                display: inline-block;
-                height: 100%;
-                background-color: rgb(245, 245, 245);
-                position: absolute;
-                top: 0;
-                right: 0;
-                z-index: -100;"></div>
-              <div
-                style="
-                display: inline-block;
-                width: 50%;
-                height: 100%;
-                background-color: rgb(237, 75, 75);
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: -100;"></div>
-
-            </mat-card-content>
-            <div class="pokemon-name-title">
-              <span>
-                {{ pokemonList.name | titlecase }}
-              </span>
-            </div>
-          </mat-card>
-        </mat-grid-tile>
-      </mat-grid-list>
-    </div>
+    <router-outlet></router-outlet>
     <!-- END Conteudo principal-->
   </mat-sidenav-content>
 </mat-sidenav-container>

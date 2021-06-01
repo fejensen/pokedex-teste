@@ -57,6 +57,10 @@ mat-card-content{
   height: 50%;
 }
 
+.no-deco{
+  text-decoration: none;
+}
+
 .pokemon-name-title{
   position: absolute;
   background-color: rgba(0, 0, 0, 0.631);
@@ -72,7 +76,9 @@ mat-card-content{
 }
 
 .pointer{
+  color: #000000;
   cursor:pointer ;
+  text-decoration: none;
 }
 
 .pointer:hover{
