@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+
+1 -  Componentes são os as interfaces do Angular, ja as diretivas são classes para adicionar algum comportamento a aplicação
+2 -  Services são os arquivos de manipulação de requisições.
+7 -  A promisse é uma forma de realizar requisições de forma assincrona.
