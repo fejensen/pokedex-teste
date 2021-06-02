@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
 import { PokemonService } from '../../service/pokemon.service';
 
 interface Pokemon {
@@ -19,38 +19,21 @@ interface ColorByType{
   [type:string] : string
 }
 
-interface pokemonType{
-  types: Array<string>;
-  type: string;
-  name: string;
-}
-
-
 @Component({
   selector: 'app-pokemon-list',
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.scss']
 })
 
-
-
 export class PokemonListComponent implements OnInit {
-
-
-
   title = 'Poke-Menu';
   opened: boolean =  true;
   pokemonRequest : Array<Pokemon> = [];
   JSON = JSON;
 
-  constructor() {
-  }
-
   async ngOnInit(): Promise<void> {
     let { data } = await new PokemonService().getPokemons();
     let pokemonResults:Array<Pokemon> = [];
-
-
 
     data.results.map(
       async(result: Pokemon)=>{
@@ -92,8 +75,7 @@ export class PokemonListComponent implements OnInit {
     this.pokemonRequest = pokemonResults;
   }
 
-
-
-
+  constructor() {
+  }
 
 }
