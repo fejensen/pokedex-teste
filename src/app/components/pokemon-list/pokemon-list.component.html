@@ -12,7 +12,6 @@
   <mat-grid-list cols="6" rowHeight="1:1">
     <mat-grid-tile *ngFor="let pokemonList of pokemonRequest">
       <mat-card class="pointer"  routerLink="/pokemon-info-component">
-
         <mat-card-content>
           <img mat-card-image src={{pokemonList.img}} alt={{pokemonList.name}}>
           <div
