@@ -30,6 +30,7 @@ export class PokemonListComponent implements OnInit {
   opened: boolean =  true;
   pokemonRequest : Array<Pokemon> = [];
   JSON = JSON;
+  @Output() pokeId = new EventEmitter();
 
   async ngOnInit(): Promise<void> {
     let { data } = await new PokemonService().getPokemons();
@@ -67,15 +68,31 @@ export class PokemonListComponent implements OnInit {
         }
 
         let pokeColor1:string = colorsByType[data.types[0].type.name];
-        let pokeColor2:string = colorsByType[data.types[1].type.name];
+        let pokeColor2:string = colorsByType[data.types[0].type.name];
 
-       pokemonResults.push({name:pokeName, url:'', img:imgUrl, number:pokeNumber,color1:pokeColor1, color2:pokeColor2, type:pokeType, stats:pokeStats, abilities:pokeAbility});
+        if(data.types[1]){
+          pokeColor2 = colorsByType[data.types[1].type.name];
+        }
+/*
+        if(colorsByType[data.types[0].type.name] == undefined){
+          pokeColor2 = colorsByType[data.types[0].type.name]
+        }else{
+          pokeColor2 = colorsByType[data.types[1].type.name]
+        }
+ */
+
+        pokemonResults.push({ name: pokeName, url: '', img: imgUrl, number: pokeNumber, color1: pokeColor1, color2: pokeColor2, type: pokeType, stats: pokeStats, abilities: pokeAbility });
       }
     )
+
     this.pokemonRequest = pokemonResults;
+    this.pokeId.emit(this.pokemonRequest);
   }
 
   constructor() {
   }
+
+
+
 
 }

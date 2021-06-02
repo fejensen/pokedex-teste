@@ -1,28 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { PokemonService } from 'src/app/service/pokemon.service';
+import { Component, OnInit, Input} from '@angular/core';
+
 
 interface PokemonFullInfo {
   name: string;
-  number: string;
   img: string;
-
+  number: string;
+  color1:string;
+  color2:string;
+  type: Array<string>;
+  stats: Array<string>;
+  abilities: Array<string>;
 };
 
+
+
 @Component({
-  selector: 'app-pokemon-info',
+  selector: 'app-pokemon-info/',
   templateUrl: './pokemon-info.component.html',
   styleUrls: ['./pokemon-info.component.scss']
 })
 export class PokemonInfoComponent implements OnInit {
-  state !: Observable<object>;
-  constructor(public activatedRoute: ActivatedRoute) { }
+
+  constructor() { }
 
   async ngOnInit(): Promise<void> {
 
-    this.state = this.activatedRoute.paramMap
-    console.log(this.state)
+
   }
 
 }
