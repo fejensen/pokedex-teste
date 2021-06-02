@@ -9,7 +9,6 @@
 </form>
 
 <div class="main-content">
-  <a routerLink="/pokemon-info-component" [state]="{ hello: 'wasddasadsorld' }">Go</a>
   <mat-grid-list cols="6" rowHeight="1:1">
     <mat-grid-tile *ngFor="let pokemonList of pokemonRequest">
       <mat-card class="pointer"  routerLink="/pokemon-info-component">
