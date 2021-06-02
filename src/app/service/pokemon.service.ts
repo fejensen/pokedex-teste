@@ -14,5 +14,8 @@ export class PokemonService {
     return await axios.get(url);
   }
 
+  async getPokemonFullInfo(id: string){
+    return await axios.get('https://pokeapi.co/api/v2/pokemon/'+id);
+  }
 
 }

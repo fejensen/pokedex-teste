@@ -4,26 +4,26 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgb(255, 235, 193);
+  background-color: rgb(232, 232, 232);
 }
 
 .main-toolbar{
   position: fixed;
   margin-top: -64px;
   z-index:999;
-  background-color: rgb(218, 193, 166);
+  background-color: #a040a0;
 }
 
 .c-sidebar{
   width: 20%;
   min-width: 140px;
   max-width: 200px;
-  background-color: rgb(255, 223, 153);
+  background-color: rgb(255, 255, 255);
 }
 
 .main-title-box{
   height: 63px;
-  border-bottom: 1px solid rgb(213, 179, 107);
+  border-bottom: 1px solid rgb(170, 170, 170);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,6 +32,10 @@
 .search-field mat-form-field{
   width:98%;
   margin: 30px 15px 30px 15px;
+}
+
+mat-toolbar{
+  color: #ffffff;
 }
 
 mat-sidenav-content{

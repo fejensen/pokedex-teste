@@ -10,14 +10,14 @@
 <div class="main-content">
   <mat-grid-list cols="6" rowHeight="1:1">
     <mat-grid-tile *ngFor="let pokemonList of pokemonRequest">
-      <mat-card >
+      <mat-card class="pointer"  routerLink="/pokemon-info-component">
         <mat-card-content>
           <img mat-card-image src={{pokemonList.img}} alt={{pokemonList.name}}>
           <div
             style="width: 50%;
             display: inline-block;
             height: 100%;
-            background-color: rgb(245, 245, 245);
+            background-color: {{pokemonList.color1}};
             position: absolute;
             top: 0;
             right: 0;
@@ -27,7 +27,7 @@
             display: inline-block;
             width: 50%;
             height: 100%;
-            background-color: rgb(237, 75, 75);
+            background-color: {{pokemonList.color2}};
             position: absolute;
             top: 0;
             left: 0;

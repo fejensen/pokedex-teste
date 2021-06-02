@@ -6,21 +6,21 @@
     right: 0;
     background-color: rgb(255, 235, 193);
   }
-  
+
   .main-toolbar{
     position: fixed;
     margin-top: -64px;
     z-index:999;
     background-color: rgb(218, 193, 166);
   }
-  
+
   .c-sidebar{
     width: 20%;
     min-width: 140px;
     max-width: 200px;
     background-color: rgb(255, 223, 153);
   }
-  
+
   .main-title-box{
     height: 63px;
     border-bottom: 1px solid rgb(213, 179, 107);
@@ -28,16 +28,16 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .search-field mat-form-field{
     width:98%;
     margin: 30px 15px 30px 15px;
   }
-  
+
   mat-sidenav-content{
     margin-top: 64px;
   }
-  
+
   mat-card{
     background-color: rgba(248, 239, 226, 0);
     width: 70%;
@@ -45,18 +45,18 @@
     display: inline-block;
     text-align: center;
   }
-  
+
   mat-card:hover{
     background-color: rgba(225, 201, 164, 0.179);
   }
-  
+
   mat-card-content{
     margin-left: auto;
     margin-right: auto;
     width: 50%;
     height: 50%;
   }
-  
+
   .pokemon-name-title{
     position: absolute;
     background-color: rgba(0, 0, 0, 0.631);
@@ -64,52 +64,49 @@
     width: 100%;
     margin-left: -16px;
   }
-  
+
   .pokemon-name-title span{
     color: rgb(255, 255, 255);
     font-weight: 450;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
-  
+
   .pointer{
     cursor:pointer ;
   }
-  
-  .pointer:hover{
-    background-color: rgba(124, 124, 124, 0.165);
-  }
-  
+
+
+
   .main-title-box h1{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
   }
-  
+
   .toolbar-title{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
-  
+
   .full-width {
     width: 100%;
   }
-  
+
   .spacer-h-1{
     width: 1%;
   }
-  
+
   .spacer-v-1{
     height: 40px;
   }
-  
-  
+
+
   .title-m{
     margin: 15px 15px 15px 15px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 34px;
   }
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
